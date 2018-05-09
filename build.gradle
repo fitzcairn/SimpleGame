@@ -10,15 +10,19 @@ plugins {
     // Apply the java plugin to add support for Java
     id 'java'
 
+    // Will need Maven
+    id 'maven'
+
     // Apply the application plugin to add support for building an application
     id 'application'
 }
 
-// In this section you declare where to find the dependencies of your project
-repositories {
-    // Use jcenter for resolving your dependencies.
-    // You can declare any Maven/Ivy/file repository here.
-    jcenter()
+allprojects {
+    repositories {
+        jcenter()
+        // Use a github repo as a dependency.
+        maven { url "https://jitpack.io" }
+    }
 }
 
 // Define the main class for the application
@@ -31,6 +35,10 @@ dependencies {
 
     // Use JUnit test framework
     testCompile 'junit:junit:4.12'
+
+    // SimpleEngine
+    compile 'com.github.fitzcairn:SimpleEngine:master-SNAPSHOT'
+    //compile 'com.github.jitpack:gradle-simple:master-SNAPSHOT'
 }
 
 // Set up my source layout to match how eclipse did things.
