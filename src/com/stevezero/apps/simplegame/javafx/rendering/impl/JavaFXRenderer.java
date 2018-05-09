@@ -1,6 +1,6 @@
-package com.stevezero.apps.simplegame.app.rendering.impl;
+package com.stevezero.apps.simplegame.javafx.rendering.impl;
 
-import com.stevezero.apps.simplegame.app.assets.drawable.impl.AppDebugDrawable;
+import com.stevezero.apps.simplegame.javafx.assets.drawable.impl.JavaFXDebugDrawable;
 import com.stevezero.game.Values;
 import com.stevezero.game.assets.drawable.GameDrawable;
 import com.stevezero.game.engine.graphics.rendering.Rendered;
@@ -14,16 +14,16 @@ import javafx.scene.image.Image;
 
 /**
  * A class for rendering to a awt Graphics object, suitable for rendering engine output in an
- * app.
+ * javafx.
  * 
  * Does double-buffering.
  */
-public class AppRenderer extends Renderer {
+public class JavaFXRenderer extends Renderer {
 
   private final Canvas canvas;
   private final GraphicsContext graphicsContext;
 
-  public AppRenderer(Canvas canvas) {
+  public JavaFXRenderer(Canvas canvas) {
     this.canvas = canvas;
     this.graphicsContext = canvas.getGraphicsContext2D();
   }
@@ -48,14 +48,14 @@ public class AppRenderer extends Renderer {
       
       // Draw the wireframe box instead of the rendered drawable.
       doDrawImage(
-          new AppDebugDrawable(
+          new JavaFXDebugDrawable(
               drawableItem.getWidth(), drawableItem.getHeight(), element.isHighlighted()),
           element.getX(), element.getY());
       
       // Also draw the center point as a small box.
       int x = element.getX() + (drawableItem.getWidth() / 2) - 1;
       int y = element.getY() + (drawableItem.getHeight() / 2) - 1;
-      doDrawImage(new AppDebugDrawable(2, 2, true), x, y);
+      doDrawImage(new JavaFXDebugDrawable(2, 2, true), x, y);
 
     } else {
       doDrawImage(drawableItem, element.getX(), element.getY());

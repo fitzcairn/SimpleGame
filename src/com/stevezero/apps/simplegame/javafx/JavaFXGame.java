@@ -1,11 +1,11 @@
-package com.stevezero.apps.simplegame.app;
+package com.stevezero.apps.simplegame.javafx;
 
 
-import com.stevezero.apps.simplegame.app.assets.loader.impl.AppLoader;
-import com.stevezero.apps.simplegame.app.assets.sound.impl.AppSoundManager;
-import com.stevezero.apps.simplegame.app.controls.events.AppEvent;
-import com.stevezero.apps.simplegame.app.controls.events.impl.AppControlHandler;
-import com.stevezero.apps.simplegame.app.rendering.impl.AppRenderer;
+import com.stevezero.apps.simplegame.javafx.assets.loader.impl.JavaFXLoader;
+import com.stevezero.apps.simplegame.javafx.assets.sound.impl.JavaFXSoundManager;
+import com.stevezero.apps.simplegame.javafx.controls.events.JavaFXEvent;
+import com.stevezero.apps.simplegame.javafx.controls.events.impl.JavaFXControlHandler;
+import com.stevezero.apps.simplegame.javafx.rendering.impl.JavaFXRenderer;
 import com.stevezero.apps.simplegame.game.manifest.impl.SimpleGame;
 import com.stevezero.game.external.Achievements;
 import com.stevezero.game.external.Leaderboards;
@@ -23,13 +23,13 @@ import javafx.stage.Stage;
 
 import java.net.URL;
 
-import com.stevezero.apps.simplegame.app.system.impl.AppSystemManager;
+import com.stevezero.apps.simplegame.javafx.system.impl.JavaFXSystemManager;
 import com.stevezero.game.Game;
 
 /**
- * Run the game as an Applet.
+ * Run the game as an JavaFX Application.
  */
-public class AppGame extends Application { //} implements Runnable, KeyListener, MouseListener {
+public class JavaFXGame extends Application { //} implements Runnable, KeyListener, MouseListener {
   private final String title = "SimpleGame";
 
   // App primitives
@@ -40,22 +40,22 @@ public class AppGame extends Application { //} implements Runnable, KeyListener,
   private Game game;
   
   // Controls
-  private AppControlHandler controls;
+  private JavaFXControlHandler controls;
 
   @Override
   public void init() {
     // Create the system manager.
-    AppSystemManager systemManager = new AppSystemManager();
+    JavaFXSystemManager systemManager = new JavaFXSystemManager();
 
     // Create the graphics buffer.
     screen = new Canvas(systemManager.getViewWidth(), systemManager.getViewHeight());
 
     // Create the controls.
-    controls = new AppControlHandler();
+    controls = new JavaFXControlHandler();
 
     // Get our working directory so we can load resources.
     try {
-      baseURL = AppGame.class.getResource("");//new URL(getHostServices().getDocumentBase());
+      baseURL = JavaFXGame.class.getResource("");//new URL(getHostServices().getDocumentBase());
     } catch (Exception e) {
       Platform.exit();
     }
@@ -63,10 +63,10 @@ public class AppGame extends Application { //} implements Runnable, KeyListener,
     // Create the game instance.
     game = new Game(
         systemManager,
-        new AppRenderer(screen),
-        new AppLoader(baseURL),
+        new JavaFXRenderer(screen),
+        new JavaFXLoader(baseURL),
         controls,
-        new AppSoundManager(),
+        new JavaFXSoundManager(),
         new ServiceManager(new Achievements(), new Leaderboards()),
         new SimpleGame());
   }
@@ -113,7 +113,7 @@ public class AppGame extends Application { //} implements Runnable, KeyListener,
         {
           public void handle(KeyEvent e)
           {
-            controls.onEventStart(new AppEvent() {
+            controls.onEventStart(new JavaFXEvent() {
               @Override
               public boolean hasKeyEvent() {
                 return true;
@@ -144,7 +144,7 @@ public class AppGame extends Application { //} implements Runnable, KeyListener,
         {
           public void handle(KeyEvent e)
           {
-            controls.onEventStop(new AppEvent() {
+            controls.onEventStop(new JavaFXEvent() {
               @Override
               public boolean hasKeyEvent() {
                 return true;
@@ -172,7 +172,7 @@ public class AppGame extends Application { //} implements Runnable, KeyListener,
     scene.setOnMousePressed(
         new EventHandler<MouseEvent>() {
           public void handle(MouseEvent e) {
-            controls.onEventStart(new AppEvent() {
+            controls.onEventStart(new JavaFXEvent() {
               @Override
               public boolean hasKeyEvent() {
                 return false;
@@ -200,7 +200,7 @@ public class AppGame extends Application { //} implements Runnable, KeyListener,
     scene.setOnMouseReleased(
         new EventHandler<MouseEvent>() {
           public void handle(MouseEvent e) {
-            controls.onEventStop(new AppEvent() {
+            controls.onEventStop(new JavaFXEvent() {
               @Override
               public boolean hasKeyEvent() {
                 return false;

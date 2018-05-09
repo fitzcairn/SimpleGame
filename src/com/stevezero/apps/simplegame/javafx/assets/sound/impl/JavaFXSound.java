@@ -1,13 +1,13 @@
-package com.stevezero.apps.simplegame.app.assets.sound.impl;
+package com.stevezero.apps.simplegame.javafx.assets.sound.impl;
 
 import com.stevezero.game.assets.sound.Sound;
 
 import javax.sound.sampled.Clip;
 
-public class AppSound extends Sound {
+public class JavaFXSound extends Sound {
   private Clip clip;
   
-  public AppSound(Clip clip, String id) {
+  public JavaFXSound(Clip clip, String id) {
     super(id);
     this.clip = clip;
   }

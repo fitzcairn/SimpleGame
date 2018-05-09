@@ -1,4 +1,4 @@
-package com.stevezero.apps.simplegame.app.controls.events;
+package com.stevezero.apps.simplegame.javafx.controls.events;
 
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
@@ -6,7 +6,7 @@ import javafx.scene.input.MouseEvent;
 /**
  * Translation layer for different types of events.
  */
-public interface AppEvent {
+public interface JavaFXEvent {
   public boolean hasKeyEvent();
 
   public boolean hasMouseEvent();

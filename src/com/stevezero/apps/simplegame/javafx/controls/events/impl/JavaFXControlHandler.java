@@ -1,19 +1,17 @@
-package com.stevezero.apps.simplegame.app.controls.events.impl;
+package com.stevezero.apps.simplegame.javafx.controls.events.impl;
 
-import javafx.scene.input.KeyEvent;
-
-import com.stevezero.apps.simplegame.app.controls.events.AppEvent;
+import com.stevezero.apps.simplegame.javafx.controls.events.JavaFXEvent;
 import com.stevezero.game.Game;
 import com.stevezero.game.controls.events.ControlHandler;
 import com.stevezero.game.controls.events.EventType;
 import com.stevezero.game.controls.onscreen.Interactable;
 
 /**
- * Translates keyboard actions for when this game runs as an com.stevezero.apps.simplegame.app.
+ * Translates keyboard actions for when this game runs as an com.stevezero.apps.simplegame.javafx.
  */
-public final class AppControlHandler extends ControlHandler {
+public final class JavaFXControlHandler extends ControlHandler {
 
-  public void onEventStart(AppEvent event, Game game) {
+  public void onEventStart(JavaFXEvent event, Game game) {
     if (event.hasKeyEvent()) {
       // Transate from an Applet KeyEvent to a control event.
       switch (event.getKeyEvent().getCode()) {
@@ -56,7 +54,7 @@ public final class AppControlHandler extends ControlHandler {
     }
   }
 
-  public void onEventStop(AppEvent event, Game game) {
+  public void onEventStop(JavaFXEvent event, Game game) {
     if (event.hasKeyEvent()) {
       // Transate from an Applet KeyEvent to a control event.
       switch (event.getKeyEvent().getCode()) {

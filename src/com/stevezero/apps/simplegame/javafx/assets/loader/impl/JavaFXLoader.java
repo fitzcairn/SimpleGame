@@ -1,4 +1,4 @@
-package com.stevezero.apps.simplegame.app.assets.loader.impl;
+package com.stevezero.apps.simplegame.javafx.assets.loader.impl;
 
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
@@ -17,23 +17,23 @@ import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
-import com.stevezero.apps.simplegame.app.assets.drawable.impl.AppDrawable;
+import com.stevezero.apps.simplegame.javafx.assets.drawable.impl.JavaFXDrawable;
 import com.stevezero.game.assets.drawable.GameDrawable;
 import com.stevezero.game.assets.loader.Loader;
 import com.stevezero.game.assets.sound.Sound;
-import com.stevezero.apps.simplegame.app.assets.sound.impl.AppSound;
+import com.stevezero.apps.simplegame.javafx.assets.sound.impl.JavaFXSound;
 
-public class AppLoader extends Loader {
+public class JavaFXLoader extends Loader {
 
   private final URL baseURL;
   
-  public AppLoader(URL baseURL) {
+  public JavaFXLoader(URL baseURL) {
     this.baseURL = baseURL;
   }
   
   @Override
   public GameDrawable getDrawable(String id) {
-    return new AppDrawable(loadImage(baseURL, id), id);
+    return new JavaFXDrawable(loadImage(baseURL, id), id);
   }
   
   private BufferedImage loadImage(URL baseURL, String id) {
@@ -68,7 +68,7 @@ public class AppLoader extends Loader {
 
   @Override
   public GameDrawable getMutableDrawable(int width, int height) {
-    return new AppDrawable(width, height);
+    return new JavaFXDrawable(width, height);
   }
 
   @Override
@@ -77,7 +77,7 @@ public class AppLoader extends Loader {
       AudioInputStream audioStream = AudioSystem.getAudioInputStream(this.getClass().getResource("/sound/" + id));
       Clip clip = AudioSystem.getClip();
       clip.open(audioStream);
-      return new AppSound(clip, id);
+      return new JavaFXSound(clip, id);
     } catch (MalformedURLException e) {
       e.printStackTrace();
     } catch (UnsupportedAudioFileException e) {

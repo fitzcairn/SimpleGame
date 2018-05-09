@@ -1,4 +1,4 @@
-package com.stevezero.apps.simplegame.app.assets.sound.impl;
+package com.stevezero.apps.simplegame.javafx.assets.sound.impl;
 
 import com.stevezero.game.assets.sound.Sound;
 import com.stevezero.game.assets.sound.SoundManager;
@@ -6,11 +6,11 @@ import com.stevezero.game.assets.sound.SoundManager;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AppSoundManager implements SoundManager {
+public class JavaFXSoundManager implements SoundManager {
 
   protected final List<Sound> soundRoster;
 
-  public AppSoundManager() {
+  public JavaFXSoundManager() {
     soundRoster = new ArrayList<Sound>();
   }
   

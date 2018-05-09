@@ -1,4 +1,4 @@
-package com.stevezero.apps.simplegame.app.assets.drawable.impl;
+package com.stevezero.apps.simplegame.javafx.assets.drawable.impl;
 
 import com.stevezero.game.assets.drawable.GameDrawable;
 import com.stevezero.game.geometry.Box2;
@@ -12,7 +12,7 @@ import java.awt.image.BufferedImage;
 /**
  * Draw a rectangle on the screen.
  */
-public final class AppDebugDrawable extends GameDrawable {
+public final class JavaFXDebugDrawable extends GameDrawable {
 
   private static final Color BACKGROUND = new Color(255, 255, 255, 0);
   private static final Color NORMAL = new Color(0, 0, 0, 255);
@@ -23,7 +23,7 @@ public final class AppDebugDrawable extends GameDrawable {
   private final int height;
   private Color color;
   
-  public AppDebugDrawable(Box2 box) {
+  public JavaFXDebugDrawable(Box2 box) {
     super(IdGenerator.nextString());
     this.width = box.getWidth();
     this.height = box.getHeight();
@@ -31,7 +31,7 @@ public final class AppDebugDrawable extends GameDrawable {
     this.color = NORMAL;
   }
   
-  public AppDebugDrawable(Box2 box, boolean highlight) {
+  public JavaFXDebugDrawable(Box2 box, boolean highlight) {
     super(IdGenerator.nextString());
     this.width = box.getWidth();
     this.height = box.getHeight();
@@ -39,7 +39,7 @@ public final class AppDebugDrawable extends GameDrawable {
     this.color = highlight ? HIGHLIGHT : NORMAL;;
   }
   
-  public AppDebugDrawable(int width, int height) {
+  public JavaFXDebugDrawable(int width, int height) {
     super(IdGenerator.nextString());
     this.width = width;
     this.height = height;
@@ -47,7 +47,7 @@ public final class AppDebugDrawable extends GameDrawable {
     this.color = NORMAL;
   }
   
-  public AppDebugDrawable(int width, int height, boolean highlight) {
+  public JavaFXDebugDrawable(int width, int height, boolean highlight) {
     super(IdGenerator.nextString());
     this.width = width;
     this.height = height;

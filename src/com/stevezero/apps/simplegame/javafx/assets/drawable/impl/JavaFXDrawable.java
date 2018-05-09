@@ -1,4 +1,4 @@
-package com.stevezero.apps.simplegame.app.assets.drawable.impl;
+package com.stevezero.apps.simplegame.javafx.assets.drawable.impl;
 
 import com.stevezero.game.assets.drawable.GameDrawable;
 import com.stevezero.game.geometry.Box2;
@@ -10,19 +10,19 @@ import java.awt.image.BufferedImage;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.image.Image;
 
-public final class AppDrawable extends GameDrawable {
+public final class JavaFXDrawable extends GameDrawable {
   private final int width;
   private final int height;
   private final BufferedImage image;
 
-  public AppDrawable(BufferedImage image, String id) {
+  public JavaFXDrawable(BufferedImage image, String id) {
     super(id);
     this.image = image;
     this.width = image.getWidth();
     this.height = image.getHeight();
   }
   
-  public AppDrawable(int width, int height) {
+  public JavaFXDrawable(int width, int height) {
     super(IdGenerator.nextString());
     this.width = width;
     this.height = height;
@@ -56,7 +56,7 @@ public final class AppDrawable extends GameDrawable {
   }
   
   private GameDrawable doSelection(int x, int y, int width, int height) {
-    return new AppDrawable(image.getSubimage(x, y, width, height), IdGenerator.nextString());
+    return new JavaFXDrawable(image.getSubimage(x, y, width, height), IdGenerator.nextString());
   }
 
   @Override
