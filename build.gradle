@@ -14,6 +14,25 @@ plugins {
     id 'application'
 }
 
+// In this section you declare where to find the dependencies of your project
+repositories {
+    // Use jcenter for resolving your dependencies.
+    // You can declare any Maven/Ivy/file repository here.
+    jcenter()
+}
+
+// Define the main class for the application
+mainClassName = 'com.stevezero.apps.simplegame.app.AppGame'
+
+// Dependencies
+dependencies {
+    // This dependency is found on compile classpath of this component and consumers.
+    compile 'com.google.guava:guava:23.0'
+
+    // Use JUnit test framework
+    testCompile 'junit:junit:4.12'
+}
+
 // Set up my source layout to match how eclipse did things.
 sourceSets {
     main {
@@ -26,20 +45,8 @@ sourceSets {
     }
 }
 
-// Define the main class for the application
-mainClassName = 'com.stevezero.apps.simplegame.app.AppGame'
-
-dependencies {
-    // This dependency is found on compile classpath of this component and consumers.
-    compile 'com.google.guava:guava:23.0'
-
-    // Use JUnit test framework
-    testCompile 'junit:junit:4.12'
-}
-
-// In this section you declare where to find the dependencies of your project
-repositories {
-    // Use jcenter for resolving your dependencies.
-    // You can declare any Maven/Ivy/file repository here.
-    jcenter()
+// Jar compilation.
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.stevezero.apps.simplegame.app.AppGame' }
 }

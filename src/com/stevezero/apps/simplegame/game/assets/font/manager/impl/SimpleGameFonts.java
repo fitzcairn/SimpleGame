@@ -12,7 +12,7 @@ import com.stevezero.apps.simplegame.game.assets.font.impl.TitleFont;
 /**
  * Class to manage fonts for the game.
  */
-public final class GMSCrusaderFonts extends Fonts {
+public final class SimpleGameFonts extends Fonts {
   public static final String TITLE_FONT_ID = "title_font";
   public static final String HUD_FONT_ID = "hud_font";
   public static final String MENU_FONT_ID = "menu_font";
@@ -25,7 +25,7 @@ public final class GMSCrusaderFonts extends Fonts {
   private HudFont hudFont;
   private InfoFont infoFont;
   
-  public GMSCrusaderFonts(Loader loader) {
+  public SimpleGameFonts(Loader loader) {
     super(loader);
   }
 

@@ -2,10 +2,10 @@ package com.stevezero.apps.simplegame.game.manifest.impl;
 
 import java.util.List;
 
-import com.stevezero.apps.simplegame.game.assets.font.manager.impl.GMSCrusaderFonts;
+import com.stevezero.apps.simplegame.game.assets.font.manager.impl.SimpleGameFonts;
 import com.stevezero.apps.simplegame.game.engine.actor.player.impl.Tom;
-import com.stevezero.apps.simplegame.game.engine.ai.impl.RTSAi;
-import com.stevezero.apps.simplegame.game.engine.hud.impl.RTSHud;
+import com.stevezero.apps.simplegame.game.engine.ai.impl.SimpleGameAi;
+import com.stevezero.apps.simplegame.game.engine.hud.impl.SimpleGameHud;
 import com.stevezero.apps.simplegame.game.engine.map.impl.GeneratedMap;
 import com.stevezero.game.Game;
 import com.stevezero.game.Values;
@@ -20,11 +20,6 @@ import com.stevezero.game.engine.hud.Hud;
 import com.stevezero.game.engine.map.Map;
 import com.stevezero.game.manifest.Manifest;
 import com.stevezero.game.screens.Screen;
-import com.stevezero.apps.simplegame.game.assets.font.manager.impl.GMSCrusaderFonts;
-import com.stevezero.apps.simplegame.game.engine.actor.player.impl.Tom;
-import com.stevezero.apps.simplegame.game.engine.ai.impl.RTSAi;
-import com.stevezero.apps.simplegame.game.engine.hud.impl.RTSHud;
-import com.stevezero.apps.simplegame.game.engine.map.impl.GeneratedMap;
 import com.stevezero.apps.simplegame.game.screens.impl.Character;
 import com.stevezero.apps.simplegame.game.screens.impl.How;
 import com.stevezero.apps.simplegame.game.screens.impl.LevelComplete;
@@ -109,7 +104,7 @@ public class SimpleGame extends Manifest {
 
   @Override
   public Screen setScreenStart(Game game) {
-    return activateScreen(game, TEST);
+    return activateScreen(game, START);
   }
 
   @Override
@@ -164,7 +159,7 @@ public class SimpleGame extends Manifest {
   
   @Override
   public Ai createAndInitAi(Engine engine) {
-    Ai gameAi = new RTSAi();
+    Ai gameAi = new SimpleGameAi();
     return gameAi;
   }
 
@@ -188,11 +183,11 @@ public class SimpleGame extends Manifest {
 
   @Override
   protected Hud createAndInitHud(Engine engine) {
-    return new RTSHud(engine);
+    return new SimpleGameHud(engine);
   }
 
   @Override
   protected Fonts createAndInitFonts(Loader loader) {
-    return new GMSCrusaderFonts(loader);
+    return new SimpleGameFonts(loader);
   }
 }

@@ -4,10 +4,10 @@ import com.stevezero.game.assets.sound.Sound;
 
 import javax.sound.sampled.Clip;
 
-public class AppletSound extends Sound {
+public class AppSound extends Sound {
   private Clip clip;
   
-  public AppletSound(Clip clip, String id) {
+  public AppSound(Clip clip, String id) {
     super(id);
     this.clip = clip;
   }

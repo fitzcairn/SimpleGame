@@ -7,9 +7,9 @@ import com.stevezero.apps.simplegame.game.engine.ai.processor.impl.RTSEnemyProce
 /**
  * AI for enemies in GMS Crusader.  To be provided by the Manifest.
  */
-public final class RTSAi extends Ai {
+public final class SimpleGameAi extends Ai {
   
-  public RTSAi() {
+  public SimpleGameAi() {
     super(new RTSEnemyProcessors());
   } 
 }

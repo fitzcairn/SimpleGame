@@ -7,19 +7,22 @@ import com.stevezero.game.util.IdGenerator;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
-public final class AppletDrawable extends GameDrawable {
+import javafx.embed.swing.SwingFXUtils;
+import javafx.scene.image.Image;
+
+public final class AppDrawable extends GameDrawable {
   private final int width;
   private final int height;
   private final BufferedImage image;
 
-  public AppletDrawable(BufferedImage image, String id) {
+  public AppDrawable(BufferedImage image, String id) {
     super(id);
     this.image = image;
     this.width = image.getWidth();
     this.height = image.getHeight();
   }
   
-  public AppletDrawable(int width, int height) {
+  public AppDrawable(int width, int height) {
     super(IdGenerator.nextString());
     this.width = width;
     this.height = height;
@@ -27,8 +30,9 @@ public final class AppletDrawable extends GameDrawable {
   }
   
   @Override
+  // Because we're in JavaFX land now, return a converted image.
   public Object getImage() {
-    return image;
+    return SwingFXUtils.toFXImage(image, null);
   }
 
   @Override
@@ -52,13 +56,14 @@ public final class AppletDrawable extends GameDrawable {
   }
   
   private GameDrawable doSelection(int x, int y, int width, int height) {
-    return new AppletDrawable(image.getSubimage(x, y, width, height), IdGenerator.nextString());
+    return new AppDrawable(image.getSubimage(x, y, width, height), IdGenerator.nextString());
   }
 
   @Override
   public GameDrawable compose(GameDrawable other, int x, int y) {
     Graphics2D graphicsContext = image.createGraphics();
-    graphicsContext.drawImage((BufferedImage)other.getImage(), x, y, null);
+    BufferedImage otherImage = SwingFXUtils.fromFXImage((Image)other.getImage(), null);
+    graphicsContext.drawImage(otherImage, x, y, null);
     graphicsContext.dispose();    
     return this;
   }

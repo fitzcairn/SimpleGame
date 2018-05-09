@@ -2,7 +2,7 @@ package com.stevezero.apps.simplegame.game.screens.impl;
 
 import java.util.List;
 
-import com.stevezero.apps.simplegame.game.assets.font.manager.impl.GMSCrusaderFonts;
+import com.stevezero.apps.simplegame.game.assets.font.manager.impl.SimpleGameFonts;
 import com.stevezero.apps.simplegame.game.manifest.impl.SimpleGame;
 import com.stevezero.game.Game;
 import com.stevezero.game.assets.loader.Loader;
@@ -44,12 +44,12 @@ public class Menu extends Screen {
     Loader loader = game.getLoader();
     
     // Create the title.
-    title = new Text(fonts.getFont(GMSCrusaderFonts.TITLE_FONT_ID), "Main Menu", camera.getHeight() / 8, 0);
+    title = new Text(fonts.getFont(SimpleGameFonts.TITLE_FONT_ID), "Main Menu", camera.getHeight() / 8, 0);
     
     // Create menu items.
     options = Options.newBuilder(0, title.getY() + title.getHeight() + 2 * spacing,
-        camera.getWidth(), spacing, fonts.getFont(GMSCrusaderFonts.MENU_FONT_ID),
-        fonts.getFont(GMSCrusaderFonts.MENU_SELECTED_FONT_ID))
+        camera.getWidth(), spacing, fonts.getFont(SimpleGameFonts.MENU_FONT_ID),
+        fonts.getFont(SimpleGameFonts.MENU_SELECTED_FONT_ID))
           .addItem("New Game", EventType.NONE, EventType.START)
           .addItem("How to Play", EventType.NONE, EventType.MENU_HOW)
           .addItem("Achievements", EventType.NONE, EventType.MENU_ACHIEVEMENTS)

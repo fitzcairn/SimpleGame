@@ -285,7 +285,7 @@ public final class Camera {
     // TODO(stevemar): Replace this with a solution that doesn't require platform-specific
     // packages.
 //    return new Rendered(
-//        new AppletDebugDrawable(playerBox), playerBox.getX(), playerBox.getY(), Layers.DEBUG);
+//        new AppDebugDrawable(playerBox), playerBox.getX(), playerBox.getY(), Layers.DEBUG);
     return RenderedManager.get(
         engine.getGame().getLoader().getDrawable("debug"), playerBox.getX(), playerBox.getY(),
         Layers.DEBUG);

@@ -19,13 +19,13 @@ import com.stevezero.game.engine.graphics.text.Text;
 import com.stevezero.game.engine.hud.Hud;
 import com.stevezero.game.screens.Screen;
 import com.stevezero.game.statistics.Statistics;
-import com.stevezero.apps.simplegame.game.assets.font.manager.impl.GMSCrusaderFonts;
+import com.stevezero.apps.simplegame.game.assets.font.manager.impl.SimpleGameFonts;
 import com.stevezero.apps.simplegame.game.controls.onscreen.impl.ActionButton;
 
 /**
  * Manages the HUD shown during gameplay.
  */
-public class RTSHud extends Hud {
+public class SimpleGameHud extends Hud {
   // TODO(stevemar): Localize!
   private static final String SCORE = "Score: ";
 
@@ -38,13 +38,13 @@ public class RTSHud extends Hud {
   private final GameDrawable healthImage;
   private final List<Button> buttons = new ArrayList<Button>();
 
-  public RTSHud(Engine engine) {
+  public SimpleGameHud(Engine engine) {
     super(engine);
     this.fonts = engine.getManifest().getFonts(engine.getLoader());
     this.healthImage = AssetManager.getDrawable(engine.getLoader(), "atlas_health.png");
 
     // TODO(stevemar): Compose the HUD using the screen resolution.
-    this.scoreText = new Text(fonts.getFont(GMSCrusaderFonts.HUD_FONT_ID), SCORE, 0, 0);
+    this.scoreText = new Text(fonts.getFont(SimpleGameFonts.HUD_FONT_ID), SCORE, 0, 0);
   }
 
   private String formatScore(long score) {
@@ -112,8 +112,8 @@ public class RTSHud extends Hud {
     // Top menu button.
     MenuButton button =
         new MenuButton(0, 0, camera.getWidth(), "Menu",
-            fonts.getFont(GMSCrusaderFonts.MENU_FONT_ID),
-            fonts.getFont(GMSCrusaderFonts.MENU_SELECTED_FONT_ID),
+            fonts.getFont(SimpleGameFonts.MENU_FONT_ID),
+            fonts.getFont(SimpleGameFonts.MENU_SELECTED_FONT_ID),
             EventType.NONE, EventType.MENU_OPEN);
     buttons.add(button);
     

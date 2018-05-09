@@ -6,11 +6,11 @@ import com.stevezero.game.assets.sound.SoundManager;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AppletSoundManager implements SoundManager {
+public class AppSoundManager implements SoundManager {
 
   protected final List<Sound> soundRoster;
 
-  public AppletSoundManager() {
+  public AppSoundManager() {
     soundRoster = new ArrayList<Sound>();
   }
   

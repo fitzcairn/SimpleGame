@@ -1,8 +1,8 @@
 package com.stevezero.apps.simplegame.app.controls.events.impl;
 
-import java.awt.event.KeyEvent;
+import javafx.scene.input.KeyEvent;
 
-import com.stevezero.apps.simplegame.app.controls.events.AppletEvent;
+import com.stevezero.apps.simplegame.app.controls.events.AppEvent;
 import com.stevezero.game.Game;
 import com.stevezero.game.controls.events.ControlHandler;
 import com.stevezero.game.controls.events.EventType;
@@ -11,37 +11,37 @@ import com.stevezero.game.controls.onscreen.Interactable;
 /**
  * Translates keyboard actions for when this game runs as an com.stevezero.apps.simplegame.app.
  */
-public final class AppletControlHandler extends ControlHandler {
+public final class AppControlHandler extends ControlHandler {
 
-  public void onEventStart(AppletEvent event, Game game) {
+  public void onEventStart(AppEvent event, Game game) {
     if (event.hasKeyEvent()) {
       // Transate from an Applet KeyEvent to a control event.
-      switch (event.getKeyEvent().getKeyCode()) {
-        case KeyEvent.VK_ESCAPE:
+      switch (event.getKeyEvent().getCode()) {
+        case ESCAPE:
           handleEvent(EventType.MENU_OPEN);
           handleEvent(EventType.MENU_CLOSE);
           break;
-        case KeyEvent.VK_UP:
+        case UP:
           handleEvent(EventType.MENU_UP);
           break;
-        case KeyEvent.VK_DOWN:
+        case DOWN:
           handleEvent(EventType.GAME_DUCK_START);
           handleEvent(EventType.MENU_DOWN);
           break;
-        case KeyEvent.VK_LEFT:
+        case LEFT:
           handleEvent(EventType.GAME_MOVE_LEFT_START);
           break;  
-        case KeyEvent.VK_RIGHT:
+        case RIGHT:
           handleEvent(EventType.GAME_MOVE_RIGHT_START);
           break;
-        case KeyEvent.VK_SPACE:
+        case SPACE:
           handleEvent(EventType.GAME_JUMP_START);
           break;
-        case KeyEvent.VK_ENTER:
+        case ENTER:
           handleEvent(EventType.GAME_SHOOT_START);
           handleEvent(EventType.MENU_SELECT);
           break;
-        case KeyEvent.VK_M:
+        case M:
           handleEvent(EventType.DEBUG_MAP_GEN);
           break;
       }
@@ -49,30 +49,30 @@ public final class AppletControlHandler extends ControlHandler {
     if (event.hasMouseEvent()) {
       // Run through the screen controls and detect which one was hit.
       for (Interactable control : game.getInteractables()) {
-        if (control.wasActivated(event.getMouseEvent().getX(), event.getMouseEvent().getY())) {
+        if (control.wasActivated((int)event.getMouseEvent().getSceneX(), (int)event.getMouseEvent().getSceneY())) {
           handleEvent(control.getStartEvent());
         }
       }
     }
   }
 
-  public void onEventStop(AppletEvent event, Game game) {
+  public void onEventStop(AppEvent event, Game game) {
     if (event.hasKeyEvent()) {
       // Transate from an Applet KeyEvent to a control event.
-      switch (event.getKeyEvent().getKeyCode()) {
-        case KeyEvent.VK_DOWN:
+      switch (event.getKeyEvent().getCode()) {
+        case DOWN:
           handleEvent(EventType.GAME_DUCK_STOP);          
           break;
-        case KeyEvent.VK_LEFT:
+        case LEFT:
           handleEvent(EventType.GAME_MOVE_LEFT_STOP);          
           break;
-        case KeyEvent.VK_RIGHT:
+        case RIGHT:
           handleEvent(EventType.GAME_MOVE_RIGHT_STOP);          
           break;
-        case KeyEvent.VK_SPACE:
+        case SPACE:
           handleEvent(EventType.GAME_JUMP_STOP);          
           break;
-        case KeyEvent.VK_ENTER:
+        case ENTER:
           handleEvent(EventType.GAME_SHOOT_STOP);          
           break;
       }
@@ -80,7 +80,7 @@ public final class AppletControlHandler extends ControlHandler {
     if (event.hasMouseEvent()) {
       // Run through the screen controls and detect which one was hit.
       for (Interactable control : game.getInteractables()) {
-        if (control.wasActivated(event.getMouseEvent().getX(), event.getMouseEvent().getY())) {
+        if (control.wasActivated((int)event.getMouseEvent().getSceneX(), (int)event.getMouseEvent().getSceneY())) {
           handleEvent(control.getStopEvent());
         }
       }

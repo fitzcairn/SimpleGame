@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import com.stevezero.apps.simplegame.game.assets.font.manager.impl.GMSCrusaderFonts;
+import com.stevezero.apps.simplegame.game.assets.font.manager.impl.SimpleGameFonts;
 import com.stevezero.apps.simplegame.game.manifest.impl.SimpleGame;
 import com.stevezero.game.Game;
 import com.stevezero.game.assets.loader.Loader;
@@ -40,18 +40,18 @@ public class Loss extends Screen implements Interactable {
     renderQueue.add(new TiledScrollingBackground(loader, "bg_tile.png", camera));
     
     // Create the text.
-    textList.add(new Text(fonts.getFont(GMSCrusaderFonts.TITLE_FONT_ID), "Uh Oh!", 0, spacing)
+    textList.add(new Text(fonts.getFont(SimpleGameFonts.TITLE_FONT_ID), "Uh Oh!", 0, spacing)
         .centerX(camera.getWidth()));
-    textList.add(new Text(fonts.getFont(GMSCrusaderFonts.HUD_FONT_ID),
+    textList.add(new Text(fonts.getFont(SimpleGameFonts.HUD_FONT_ID),
         "You took a 0 OKR", 0, getLastTextY() + spacing)
         .centerX(camera.getWidth()));
-    textList.add(new Text(fonts.getFont(GMSCrusaderFonts.HUD_FONT_ID),
+    textList.add(new Text(fonts.getFont(SimpleGameFonts.HUD_FONT_ID),
         "Better luck next time!", 0, getLastTextY() + spacing)
         .centerX(camera.getWidth()));
-    textList.add(new Text(fonts.getFont(GMSCrusaderFonts.HUD_FONT_ID),
+    textList.add(new Text(fonts.getFont(SimpleGameFonts.HUD_FONT_ID),
         "Your score: " + game.getStatistics().getScore(), 0, getLastTextY() + spacing)
         .centerX(camera.getWidth()));
-    textList.add(new Text(fonts.getFont(GMSCrusaderFonts.MENU_SELECTED_FONT_ID),
+    textList.add(new Text(fonts.getFont(SimpleGameFonts.MENU_SELECTED_FONT_ID),
         "Try Again", 0, getLastTextY() + 2 * spacing)
         .centerX(camera.getWidth()));
     renderQueue.addAll(textList);

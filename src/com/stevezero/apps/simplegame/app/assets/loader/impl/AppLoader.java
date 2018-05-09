@@ -17,29 +17,29 @@ import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
-import com.stevezero.apps.simplegame.app.assets.drawable.impl.AppletDrawable;
+import com.stevezero.apps.simplegame.app.assets.drawable.impl.AppDrawable;
 import com.stevezero.game.assets.drawable.GameDrawable;
 import com.stevezero.game.assets.loader.Loader;
 import com.stevezero.game.assets.sound.Sound;
-import com.stevezero.apps.simplegame.app.assets.sound.impl.AppletSound;
+import com.stevezero.apps.simplegame.app.assets.sound.impl.AppSound;
 
-public class AppletLoader extends Loader {
+public class AppLoader extends Loader {
 
   private final URL baseURL;
   
-  public AppletLoader(URL baseURL) {
+  public AppLoader(URL baseURL) {
     this.baseURL = baseURL;
   }
   
   @Override
   public GameDrawable getDrawable(String id) {
-    return new AppletDrawable(loadImage(baseURL, id), id);
+    return new AppDrawable(loadImage(baseURL, id), id);
   }
   
   private BufferedImage loadImage(URL baseURL, String id) {
     BufferedImage image = null;
     try {
-      image = ImageIO.read(new URL(baseURL, "../res/drawable/" + id));
+      image = ImageIO.read(this.getClass().getResource("/drawable/" + id));
     } catch (MalformedURLException e) {
       e.printStackTrace();
     } catch (IOException e) {
@@ -52,8 +52,7 @@ public class AppletLoader extends Loader {
   public List<String> getFileLines(String id) {
     List<String> lines = new ArrayList<String>();
     try {
-      URL url = new URL(baseURL, "../res/data/" + id);
-      InputStream inputStream = url.openStream();
+      InputStream inputStream = this.getClass().getResource("/data/" + id).openStream();
       BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
       String line;
       while((line = bufferedReader.readLine()) != null){
@@ -69,17 +68,16 @@ public class AppletLoader extends Loader {
 
   @Override
   public GameDrawable getMutableDrawable(int width, int height) {
-    return new AppletDrawable(width, height);
+    return new AppDrawable(width, height);
   }
 
   @Override
   public Sound getSound(String id) {
     try {
-      AudioInputStream audioStream = AudioSystem.getAudioInputStream(
-          new URL(baseURL, "../res/sound/" + id));
+      AudioInputStream audioStream = AudioSystem.getAudioInputStream(this.getClass().getResource("/sound/" + id));
       Clip clip = AudioSystem.getClip();
       clip.open(audioStream);
-      return new AppletSound(clip, id);
+      return new AppSound(clip, id);
     } catch (MalformedURLException e) {
       e.printStackTrace();
     } catch (UnsupportedAudioFileException e) {

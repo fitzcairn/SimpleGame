@@ -3,7 +3,7 @@ package com.stevezero.apps.simplegame.app.system.impl;
 import com.stevezero.game.Values;
 import com.stevezero.game.system.SystemManager;
 
-public class AppletSystemManager implements SystemManager {
+public class AppSystemManager implements SystemManager {
   @Override
   public void quit() {
     System.exit(0);

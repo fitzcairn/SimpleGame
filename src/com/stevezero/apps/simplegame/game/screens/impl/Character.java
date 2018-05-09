@@ -3,7 +3,7 @@ package com.stevezero.apps.simplegame.game.screens.impl;
 import java.util.LinkedList;
 import java.util.List;
 
-import com.stevezero.apps.simplegame.game.assets.font.manager.impl.GMSCrusaderFonts;
+import com.stevezero.apps.simplegame.game.assets.font.manager.impl.SimpleGameFonts;
 import com.stevezero.apps.simplegame.game.manifest.impl.SimpleGame;
 import com.stevezero.game.Game;
 import com.stevezero.game.assets.loader.Loader;
@@ -52,18 +52,18 @@ public class Character extends Screen {
     renderQueue.add(new TiledScrollingBackground(loader, "bg_tile.png", camera));
 
     // Create the title.
-    title = new Text(fonts.getFont(GMSCrusaderFonts.TITLE_FONT_ID), "Select Your Character",
+    title = new Text(fonts.getFont(SimpleGameFonts.TITLE_FONT_ID), "Select Your Character",
         camera.getHeight() / 8, 0);
     cardY = title.getY() + title.getHeight() + 2 * spacing;
     
     // Create menu items.
     options = Options.newBuilder(0, cardY,
-        camera.getWidth() / 2, spacing, fonts.getFont(GMSCrusaderFonts.MENU_FONT_ID),
-        fonts.getFont(GMSCrusaderFonts.MENU_SELECTED_FONT_ID))
+        camera.getWidth() / 2, spacing, fonts.getFont(SimpleGameFonts.MENU_FONT_ID),
+        fonts.getFont(SimpleGameFonts.MENU_SELECTED_FONT_ID))
           .addItem("Thrillson", EventType.NONE, EventType.CHAR_THRILLSON,
-              fonts.getFont(GMSCrusaderFonts.HUD_FONT_ID))
+              fonts.getFont(SimpleGameFonts.HUD_FONT_ID))
           .addItem("Hair Santoro", EventType.NONE, EventType.CHAR_SANTORO,
-              fonts.getFont(GMSCrusaderFonts.HUD_FONT_ID))
+              fonts.getFont(SimpleGameFonts.HUD_FONT_ID))
           .build();
     
     // Add title.
@@ -81,8 +81,8 @@ public class Character extends Screen {
     
     // Start!
     startButton = new MenuButton(0, camera.getHeight() - 120, camera.getWidth() / 2, "Start!",
-        fonts.getFont(GMSCrusaderFonts.MENU_FONT_ID),
-        fonts.getFont(GMSCrusaderFonts.MENU_SELECTED_FONT_ID), EventType.NONE,
+        fonts.getFont(SimpleGameFonts.MENU_FONT_ID),
+        fonts.getFont(SimpleGameFonts.MENU_SELECTED_FONT_ID), EventType.NONE,
         EventType.START);
     startButton.setVisible(false);
     renderQueue.add(startButton);
