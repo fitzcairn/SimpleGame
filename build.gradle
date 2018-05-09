@@ -13,6 +13,9 @@ plugins {
     // Will need Maven
     id 'maven'
 
+    // Use the IDEA plugin to auto-generate IDEA project files.
+    id 'idea'
+
     // Apply the application plugin to add support for building an application
     id 'application'
 }
@@ -38,7 +41,6 @@ dependencies {
 
     // SimpleEngine
     compile 'com.github.fitzcairn:SimpleEngine:master-SNAPSHOT'
-    //compile 'com.github.jitpack:gradle-simple:master-SNAPSHOT'
 }
 
 // Set up my source layout to match how eclipse did things.
