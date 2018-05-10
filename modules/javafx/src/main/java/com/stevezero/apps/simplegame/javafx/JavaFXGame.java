@@ -1,27 +1,27 @@
 package com.stevezero.apps.simplegame.javafx;
 
 
+import com.stevezero.apps.simplegame.game.manifest.impl.SimpleGame;
 import com.stevezero.apps.simplegame.javafx.assets.loader.impl.JavaFXLoader;
 import com.stevezero.apps.simplegame.javafx.assets.sound.impl.JavaFXSoundManager;
 import com.stevezero.apps.simplegame.javafx.controls.events.JavaFXEvent;
 import com.stevezero.apps.simplegame.javafx.controls.events.impl.JavaFXControlHandler;
 import com.stevezero.apps.simplegame.javafx.rendering.impl.JavaFXRenderer;
-import com.stevezero.apps.simplegame.game.manifest.impl.SimpleGame;
+import com.stevezero.apps.simplegame.javafx.system.impl.JavaFXSystemManager;
+import com.stevezero.game.Game;
 import com.stevezero.game.external.Achievements;
 import com.stevezero.game.external.Leaderboards;
 import com.stevezero.game.external.services.ServiceManager;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.event.EventHandler;
-import javafx.scene.Scene;
 import javafx.scene.Group;
+import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-import com.stevezero.apps.simplegame.javafx.system.impl.JavaFXSystemManager;
-import com.stevezero.game.Game;
 
 /**
  * Run the game as an JavaFX Application.
@@ -34,7 +34,7 @@ public class JavaFXGame extends Application {
 
   // The game instance.
   private Game game;
-  
+
   // Controls
   private JavaFXControlHandler controls;
 
@@ -73,7 +73,7 @@ public class JavaFXGame extends Application {
     registerControls(scene);
 
     // The game loop, runs in the UI thread.
-    AnimationTimer animator = new AnimationTimer(){
+    AnimationTimer animator = new AnimationTimer() {
 
       @Override
       public void handle(long arg0) {
@@ -98,10 +98,8 @@ public class JavaFXGame extends Application {
   private void registerControls(Scene scene) {
     // Key down
     scene.setOnKeyPressed(
-        new EventHandler<KeyEvent>()
-        {
-          public void handle(KeyEvent e)
-          {
+        new EventHandler<KeyEvent>() {
+          public void handle(KeyEvent e) {
             controls.onEventStart(new JavaFXEvent() {
               @Override
               public boolean hasKeyEvent() {
@@ -129,10 +127,8 @@ public class JavaFXGame extends Application {
 
     // Key up
     scene.setOnKeyReleased(
-        new EventHandler<KeyEvent>()
-        {
-          public void handle(KeyEvent e)
-          {
+        new EventHandler<KeyEvent>() {
+          public void handle(KeyEvent e) {
             controls.onEventStop(new JavaFXEvent() {
               @Override
               public boolean hasKeyEvent() {

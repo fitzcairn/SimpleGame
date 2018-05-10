@@ -1,0 +1,23 @@
+/*
+ * Build the game implementation as a library.
+ */
+
+plugins {
+    // Apply the java plugin to add support for Java
+    id 'java'
+}
+
+// Dependencies
+dependencies {
+    // SimpleEngine
+    compile 'com.github.fitzcairn:SimpleEngine:master-SNAPSHOT'
+}
+
+// Set up my source layout
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java']
+        }
+    }
+}

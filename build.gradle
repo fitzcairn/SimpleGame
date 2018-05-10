@@ -3,17 +3,8 @@
  */
 
 plugins {
-    // Apply the java plugin to add support for Java
-    id 'java'
-
-    // Will need Maven
-    id 'maven'
-
     // Use the IDEA plugin to auto-generate IDEA project files.
     id 'idea'
-
-    // Use the application plugin to add support for building an application
-    id 'application'
 }
 
 allprojects {

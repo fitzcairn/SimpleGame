@@ -3,5 +3,6 @@
  */
 
 rootProject.name = 'SimpleGame'
-include ':modules/game',
-        ':modules/javafx'
+include ':libs:game',
+        ':modules:javafx',
+        ':modules:android'

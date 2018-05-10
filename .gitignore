@@ -2,4 +2,5 @@
 .gradle
 .idea
 .settings
+local.properties
 build

@@ -19,7 +19,7 @@ mainClassName = 'com.stevezero.apps.simplegame.javafx.JavaFXGame'
 // Dependencies
 dependencies {
     // SimpleGame implementation.
-    compile project(':modules/game')
+    compile project(':libs:game')
 }
 
 // Set up my source layout
@@ -29,7 +29,7 @@ sourceSets {
             srcDirs = ['src/main/java']
         }
         resources {
-            srcDirs = ['../../res/']
+            srcDirs = ['src/main/res/']
         }
     }
 }
