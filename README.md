@@ -2,7 +2,7 @@
 
 This is an example game implemented using [SimpleEngine](https://github.com/fitzcairn/SimpleEngine), a 2D Java game engine.  Please feel free to copy shamelessly to make your own games.
 
-Right now, this game only runs as a JavaFX Application, but as SimpleEngine supports Android it will be ported over to Android shortly.
+This example game runs as a JavaFX Application and an Android app.
 
 ## Getting Started
 
