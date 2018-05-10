@@ -10,8 +10,8 @@ import com.stevezero.apps.simplegame.android.assets.drawable.impl.AppDrawable;
 import com.stevezero.apps.simplegame.android.system.impl.AppSystemManager;
 import com.stevezero.game.Values;
 import com.stevezero.game.assets.drawable.GameDrawable;
-import com.stevezero.game.rendering.Rendered;
-import com.stevezero.game.rendering.Renderer;
+import com.stevezero.game.engine.graphics.rendering.Rendered;
+import com.stevezero.game.engine.graphics.rendering.Renderer;
 
 import java.util.Collection;
 

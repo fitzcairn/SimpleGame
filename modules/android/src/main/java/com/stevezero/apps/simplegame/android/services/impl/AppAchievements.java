@@ -1,9 +1,10 @@
 package com.stevezero.apps.simplegame.android.services.impl;
 
 import com.google.android.gms.games.Games;
+import com.stevezero.apps.simplegame.android.R;
 import com.stevezero.apps.simplegame.android.util.BaseGameActivity;
 import com.stevezero.apps.simplegame.android.util.GameHelper;
-import com.stevezero.game.services.Achievements;
+import com.stevezero.game.external.Achievements;
 
 /**
  * Implementation of achievements for android.

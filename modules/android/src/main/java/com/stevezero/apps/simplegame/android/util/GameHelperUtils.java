@@ -9,6 +9,7 @@ import android.util.Log;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.games.GamesActivityResultCodes;
+import com.stevezero.apps.simplegame.android.R;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

@@ -20,8 +20,9 @@ import com.stevezero.apps.simplegame.android.rendering.impl.AppRenderer;
 import com.stevezero.apps.simplegame.android.services.impl.AppAchievements;
 import com.stevezero.apps.simplegame.android.services.impl.AppLeaderboards;
 import com.stevezero.apps.simplegame.android.system.impl.AppSystemManager;
+import com.stevezero.apps.simplegame.game.manifest.impl.SimpleGame;
 import com.stevezero.game.Game;
-import com.stevezero.game.services.ServiceManager;
+import com.stevezero.game.external.services.ServiceManager;
 
 /**
  * The Game view.
@@ -127,7 +128,8 @@ public class GameView extends SurfaceView implements Callback {
           controlHandler,
           new AppSoundManager(context),
           new ServiceManager(new AppAchievements(gameActivity),
-              new AppLeaderboards(gameActivity)));
+              new AppLeaderboards(gameActivity)),
+          new SimpleGame());
 
       // Give the control handler a reference to the game.
       // This is required to map touch events to game widgets.

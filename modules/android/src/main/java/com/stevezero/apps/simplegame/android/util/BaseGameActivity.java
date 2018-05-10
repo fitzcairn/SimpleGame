@@ -50,10 +50,10 @@ public abstract class BaseGameActivity extends FragmentActivity implements GameH
 
     // We expose these constants here because we don't want users of this class
     // to have to know about GameHelper at all.
-    public static final int CLIENT_GAMES = com.google.example.games.basegameutils.GameHelper.CLIENT_GAMES;
-    public static final int CLIENT_APPSTATE = com.google.example.games.basegameutils.GameHelper.CLIENT_APPSTATE;
-    public static final int CLIENT_PLUS = com.google.example.games.basegameutils.GameHelper.CLIENT_PLUS;
-    public static final int CLIENT_ALL = com.google.example.games.basegameutils.GameHelper.CLIENT_ALL;
+    public static final int CLIENT_GAMES = GameHelper.CLIENT_GAMES;
+    public static final int CLIENT_APPSTATE = GameHelper.CLIENT_APPSTATE;
+    public static final int CLIENT_PLUS = GameHelper.CLIENT_PLUS;
+    public static final int CLIENT_ALL = GameHelper.CLIENT_ALL;
 
     // Requested clients. By default, that's just the games client.
     protected int mRequestedClients = CLIENT_GAMES;
@@ -92,7 +92,7 @@ public abstract class BaseGameActivity extends FragmentActivity implements GameH
 
     public GameHelper getGameHelper() {
         if (mHelper == null) {
-            mHelper = new com.google.example.games.basegameutils.GameHelper(this, mRequestedClients);
+            mHelper = new GameHelper(this, mRequestedClients);
             mHelper.enableDebugLog(mDebugLog);
         }
         return mHelper;

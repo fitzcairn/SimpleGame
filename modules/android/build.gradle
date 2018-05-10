@@ -37,14 +37,8 @@ android {
 }
 
 dependencies {
-    // SimpleEngine
-    compile 'com.github.fitzcairn:SimpleEngine:master-SNAPSHOT'
-
     // Game implementation
     implementation project(':libs:game')
-
-    //implementation fileTree(dir: 'modules/game', include: ['*.jar'])
-
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation 'com.android.support:support-v4:19.+'

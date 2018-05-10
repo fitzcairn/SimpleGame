@@ -1,9 +1,10 @@
 package com.stevezero.apps.simplegame.android.services.impl;
 
 import com.google.android.gms.games.Games;
-import com.google.example.games.basegameutils.BaseGameActivity;
-import com.google.example.games.basegameutils.GameHelper;
-import com.stevezero.game.services.Leaderboards;
+import com.stevezero.apps.simplegame.android.R;
+import com.stevezero.apps.simplegame.android.util.BaseGameActivity;
+import com.stevezero.apps.simplegame.android.util.GameHelper;
+import com.stevezero.game.external.Leaderboards;
 
 /**
  * Implementation of leaderboards for android.
