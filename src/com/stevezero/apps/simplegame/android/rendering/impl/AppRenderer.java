@@ -8,10 +8,10 @@ import android.view.SurfaceHolder;
 import com.stevezero.apps.simplegame.android.assets.drawable.impl.AppDebugDrawable;
 import com.stevezero.apps.simplegame.android.assets.drawable.impl.AppDrawable;
 import com.stevezero.apps.simplegame.android.system.impl.AppSystemManager;
-import com.stevezero.gmscrusader.game.Values;
-import com.stevezero.gmscrusader.game.assets.drawable.GameDrawable;
-import com.stevezero.gmscrusader.game.rendering.Rendered;
-import com.stevezero.gmscrusader.game.rendering.Renderer;
+import com.stevezero.game.Values;
+import com.stevezero.game.assets.drawable.GameDrawable;
+import com.stevezero.game.rendering.Rendered;
+import com.stevezero.game.rendering.Renderer;
 
 import java.util.Collection;
 

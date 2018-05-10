@@ -2,7 +2,7 @@ package com.stevezero.apps.simplegame.android.assets.sound.impl;
 
 import android.media.SoundPool;
 
-import com.stevezero.gmscrusader.game.assets.sound.Sound;
+import com.stevezero.game.assets.sound.Sound;
 
 public class AppSound extends Sound {
   private SoundPool soundPool;

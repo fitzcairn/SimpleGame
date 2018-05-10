@@ -93,9 +93,9 @@ public abstract class SystemUiHider {
      */
     public static SystemUiHider getInstance(Activity activity, View anchorView, int flags) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-            return new com.stevezero.gmscrusader.util.SystemUiHiderHoneycomb(activity, anchorView, flags);
+            return new com.stevezero.util.SystemUiHiderHoneycomb(activity, anchorView, flags);
         } else {
-            return new com.stevezero.gmscrusader.util.SystemUiHiderBase(activity, anchorView, flags);
+            return new com.stevezero.util.SystemUiHiderBase(activity, anchorView, flags);
         }
     }
 

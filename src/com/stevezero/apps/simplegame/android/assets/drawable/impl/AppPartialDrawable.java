@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 
-import com.stevezero.gmscrusader.game.assets.drawable.GameDrawable;
+import com.stevezero.game.assets.drawable.GameDrawable;
 
 
 /**

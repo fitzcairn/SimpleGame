@@ -6,12 +6,12 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
 
-import com.stevezero.gmscrusader.game.Game;
-import com.stevezero.gmscrusader.game.Values;
-import com.stevezero.gmscrusader.game.controls.events.ControlHandler;
-import com.stevezero.gmscrusader.game.controls.events.EventType;
-import com.stevezero.gmscrusader.game.controls.onscreen.Interactable;
-import com.stevezero.gmscrusader.game.system.SystemManager;
+import com.stevezero.game.Game;
+import com.stevezero.game.Values;
+import com.stevezero.game.controls.events.ControlHandler;
+import com.stevezero.game.controls.events.EventType;
+import com.stevezero.game.controls.onscreen.Interactable;
+import com.stevezero.game.system.SystemManager;
 
 import java.util.ArrayList;
 import java.util.List;

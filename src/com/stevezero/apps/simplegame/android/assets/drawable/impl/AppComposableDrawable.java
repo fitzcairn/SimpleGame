@@ -3,8 +3,8 @@ package com.stevezero.apps.simplegame.android.assets.drawable.impl;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 
-import com.stevezero.gmscrusader.game.assets.drawable.GameDrawable;
-import com.stevezero.gmscrusader.game.geometry.Box2;
+import com.stevezero.game.assets.drawable.GameDrawable;
+import com.stevezero.game.geometry.Box2;
 
 import java.util.ArrayList;
 import java.util.List;

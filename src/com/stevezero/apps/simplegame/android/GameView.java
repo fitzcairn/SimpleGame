@@ -20,8 +20,8 @@ import com.stevezero.apps.simplegame.android.rendering.impl.AppRenderer;
 import com.stevezero.apps.simplegame.android.services.impl.AppAchievements;
 import com.stevezero.apps.simplegame.android.services.impl.AppLeaderboards;
 import com.stevezero.apps.simplegame.android.system.impl.AppSystemManager;
-import com.stevezero.gmscrusader.game.Game;
-import com.stevezero.gmscrusader.game.services.ServiceManager;
+import com.stevezero.game.Game;
+import com.stevezero.game.services.ServiceManager;
 
 /**
  * The Game view.

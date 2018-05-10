@@ -4,9 +4,9 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 
-import com.stevezero.gmscrusader.game.assets.drawable.GameDrawable;
-import com.stevezero.gmscrusader.game.engine.IdGenerator;
-import com.stevezero.gmscrusader.game.geometry.Box2;
+import com.stevezero.game.assets.drawable.GameDrawable;
+import com.stevezero.game.util.IdGenerator;
+import com.stevezero.game.geometry.Box2;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -3,7 +3,7 @@ package com.stevezero.apps.simplegame.android.system.impl;
 import android.graphics.Point;
 import android.view.Display;
 
-import com.stevezero.gmscrusader.game.system.SystemManager;
+import com.stevezero.game.system.SystemManager;
 
 public class AppSystemManager implements SystemManager {
   // Size of the screen, in pixels.

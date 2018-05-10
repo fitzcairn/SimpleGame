@@ -6,9 +6,9 @@ import android.graphics.BitmapFactory;
 import com.stevezero.apps.simplegame.android.assets.drawable.impl.AppComposableDrawable;
 import com.stevezero.apps.simplegame.android.assets.drawable.impl.AppDrawable;
 import com.stevezero.apps.simplegame.android.assets.sound.impl.AppSound;
-import com.stevezero.gmscrusader.game.assets.drawable.GameDrawable;
-import com.stevezero.gmscrusader.game.assets.loader.Loader;
-import com.stevezero.gmscrusader.game.assets.sound.Sound;
+import com.stevezero.game.assets.drawable.GameDrawable;
+import com.stevezero.game.assets.loader.Loader;
+import com.stevezero.game.assets.sound.Sound;
 
 import java.util.HashMap;
 import java.util.Map;

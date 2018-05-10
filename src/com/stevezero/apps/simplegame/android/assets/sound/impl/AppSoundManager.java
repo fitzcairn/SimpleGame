@@ -4,9 +4,9 @@ import android.content.Context;
 import android.media.AudioManager;
 import android.media.SoundPool;
 
-import com.stevezero.gmscrusader.R;
-import com.stevezero.gmscrusader.game.assets.sound.Sound;
-import com.stevezero.gmscrusader.game.assets.sound.SoundManager;
+import com.stevezero.R;
+import com.stevezero.game.assets.sound.Sound;
+import com.stevezero.game.assets.sound.SoundManager;
 
 public class AppSoundManager implements SoundManager {
   private final Context context;

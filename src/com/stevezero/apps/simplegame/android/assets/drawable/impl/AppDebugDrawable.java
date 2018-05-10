@@ -2,9 +2,9 @@ package com.stevezero.apps.simplegame.android.assets.drawable.impl;
 
 import android.graphics.Bitmap;
 
-import com.stevezero.gmscrusader.game.assets.drawable.GameDrawable;
-import com.stevezero.gmscrusader.game.engine.IdGenerator;
-import com.stevezero.gmscrusader.game.geometry.Box2;
+import com.stevezero.game.assets.drawable.GameDrawable;
+import com.stevezero.game.util.IdGenerator;
+import com.stevezero.game.geometry.Box2;
 
 /**
  * Draw a rectangle on the screen.

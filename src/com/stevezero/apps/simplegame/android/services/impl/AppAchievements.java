@@ -3,8 +3,8 @@ package com.stevezero.apps.simplegame.android.services.impl;
 import com.google.android.gms.games.Games;
 import com.google.example.games.basegameutils.BaseGameActivity;
 import com.google.example.games.basegameutils.GameHelper;
-import com.stevezero.gmscrusader.R;
-import com.stevezero.gmscrusader.game.services.Achievements;
+import com.stevezero.R;
+import com.stevezero.game.services.Achievements;
 
 /**
  * Implementation of achievements for android.
