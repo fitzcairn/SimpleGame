@@ -27,7 +27,10 @@ I suggest you do the following before cloning this project:
 ### Building and Running: JavaFX
 
 * [Open the Gradle tool window in IntelliJ](https://www.jetbrains.com/help/idea/jetgradle-tool-window.html).
-* Expand "Tasks", expand "application", and double-click "run".
+* Expand ":modules/javafx"
+* Expand "Tasks"
+* Expand "application"
+* Double-click "run".
 
 ### Building and Running: Android
 
