@@ -34,7 +34,6 @@ public class JavaFXGame extends Application { //} implements Runnable, KeyListen
 
   // App primitives
   private Canvas screen;
-  private URL baseURL;
 
   // The game instance.
   private Game game;
@@ -53,18 +52,11 @@ public class JavaFXGame extends Application { //} implements Runnable, KeyListen
     // Create the controls.
     controls = new JavaFXControlHandler();
 
-    // Get our working directory so we can load resources.
-    try {
-      baseURL = JavaFXGame.class.getResource("");//new URL(getHostServices().getDocumentBase());
-    } catch (Exception e) {
-      Platform.exit();
-    }
-
     // Create the game instance.
     game = new Game(
         systemManager,
         new JavaFXRenderer(screen),
-        new JavaFXLoader(baseURL),
+        new JavaFXLoader(),
         controls,
         new JavaFXSoundManager(),
         new ServiceManager(new Achievements(), new Leaderboards()),

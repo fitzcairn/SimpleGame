@@ -25,18 +25,12 @@ import com.stevezero.apps.simplegame.javafx.assets.sound.impl.JavaFXSound;
 
 public class JavaFXLoader extends Loader {
 
-  private final URL baseURL;
-  
-  public JavaFXLoader(URL baseURL) {
-    this.baseURL = baseURL;
-  }
-  
   @Override
   public GameDrawable getDrawable(String id) {
-    return new JavaFXDrawable(loadImage(baseURL, id), id);
+    return new JavaFXDrawable(loadImage(id), id);
   }
   
-  private BufferedImage loadImage(URL baseURL, String id) {
+  private BufferedImage loadImage(String id) {
     BufferedImage image = null;
     try {
       image = ImageIO.read(this.getClass().getResource("/drawable/" + id));
