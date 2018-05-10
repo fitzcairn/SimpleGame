@@ -27,10 +27,11 @@ I suggest you do the following before cloning this project:
 ### Building and Running: JavaFX
 
 * [Open the Gradle tool window in IntelliJ](https://www.jetbrains.com/help/idea/jetgradle-tool-window.html).
-* Expand ":modules/javafx"
-* Expand "Tasks"
-* Expand "application"
-* Double-click "run".
+* Build and run the app.  To do this:
+    * Expand ":modules:javafx"
+    * Expand "Tasks"
+    * Expand "application"
+    * Double-click "run".
 
 ### Building and Running: Android
 
@@ -38,10 +39,13 @@ First, a few more setup steps:
 
 * Get the Android SDK.  There is [a bug in IntelliJ](https://youtrack.jetbrains.com/issue/IDEA-180999) that makes this very hard to do without using Android Studio.  I suggest [downloading and installing Android Studio](https://developer.android.com/studio/install?pkg=tools), and using that to install the Android SDKs.
 * If you'd like to continue to develop in IntelliJ, add the Android SDKs to your project through [this workaround](https://stackoverflow.com/questions/45268254/how-do-i-install-the-standalone-android-sdk-and-then-add-it-to-intellij-idea-on/45268592#45268592).
-
-Now you should be ready to build and run:
-
-* TODO
+* Add an [Android run/debug configuration](https://www.jetbrains.com/help/idea/running-and-debugging-android-applications.html) to IntelliJ.
+* Build an unsigned APK.  To do this:
+    * Expand ":modules:android"
+    * Expand "Tasks"
+    * Expand "build"
+    * Double-click "build".
+* Run --> "Run 'android'", and follow instructions to create an AVD and launch the APK.
 
 ## Running Tests
 
