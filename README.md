@@ -39,6 +39,9 @@ First, a few more setup steps:
 
 * Get the Android SDK.  There is [a bug in IntelliJ](https://youtrack.jetbrains.com/issue/IDEA-180999) that makes this very hard to do without using Android Studio.  I suggest [downloading and installing Android Studio](https://developer.android.com/studio/install?pkg=tools), and using that to install the Android SDKs.
 * If you'd like to continue to develop in IntelliJ, add the Android SDKs to your project through [this workaround](https://stackoverflow.com/questions/45268254/how-do-i-install-the-standalone-android-sdk-and-then-add-it-to-intellij-idea-on/45268592#45268592).
+
+Now you're ready to build for Android:
+
 * Add an [Android run/debug configuration](https://www.jetbrains.com/help/idea/running-and-debugging-android-applications.html) to IntelliJ.
 * Build an unsigned APK.  To do this:
     * Expand ":modules:android"
