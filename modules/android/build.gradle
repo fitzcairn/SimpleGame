@@ -1,0 +1,47 @@
+apply plugin: 'com.android.application'
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        // Gradle
+        classpath 'com.android.tools.build:gradle:3.1.0'
+    }
+}
+
+android {
+    compileSdkVersion 19
+
+    buildToolsVersion "27.0.3"
+
+    defaultConfig {
+        applicationId 'com.stevezero.apps.simplegame.android'
+        minSdkVersion 15
+        targetSdkVersion 19
+        versionCode 1
+        versionName '1.0'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    productFlavors {
+    }
+}
+
+dependencies {
+    // Game implementation
+    implementation project(':libs:game')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'com.android.support:support-v4:19.+'
+    implementation 'com.google.android.gms:play-services:5.0.89'
+}
+

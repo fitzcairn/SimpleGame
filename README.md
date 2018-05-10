@@ -18,12 +18,34 @@ I suggest you do the following before cloning this project:
 * Create a [GitHub](https://github.com/) account.
 * Set up [GitHub over SSH](https://help.github.com/articles/connecting-to-github-with-ssh/).
 
-### Building and Running Locally
+### Setting Up IntelliJ
 
 * Clone this repository to your local machine (directions [here](https://help.github.com/articles/cloning-a-repository/)).
 * I strongly suggest [creating a local branch](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging) before making any changes.
 * Open IntelliJ, and create your project by [importing from build.gradle](https://www.jetbrains.com/help/idea/gradle.html#gradle_import). (Note: I suggest quickly reading up on [how IntelliJ works with Gradle](https://www.jetbrains.com/help/idea/getting-started-with-gradle.html), but this is optional--you shouldn't need to mess with the build config.)
-* [Open the Gradle tool window in IntelliJ](https://www.jetbrains.com/help/idea/jetgradle-tool-window.html), expand "Tasks", expand "application", and double-click "run".
+
+### Building and Running: JavaFX
+
+* [Open the Gradle tool window in IntelliJ](https://www.jetbrains.com/help/idea/jetgradle-tool-window.html).
+* Build and run the app.  To do this:
+    * Expand ":modules:javafx"
+    * Expand "Tasks"
+    * Expand "application"
+    * Double-click "run".
+
+### Building and Running: Android
+
+First, a few more setup steps:
+
+* Get the Android SDK.  There is [a bug in IntelliJ](https://youtrack.jetbrains.com/issue/IDEA-180999) that makes this very hard to do without using Android Studio.  I suggest [downloading and installing Android Studio](https://developer.android.com/studio/install?pkg=tools), and using that to install the Android SDKs.
+* If you'd like to continue to develop in IntelliJ, add the Android SDKs to your project through [this workaround](https://stackoverflow.com/questions/45268254/how-do-i-install-the-standalone-android-sdk-and-then-add-it-to-intellij-idea-on/45268592#45268592).
+* Add an [Android run/debug configuration](https://www.jetbrains.com/help/idea/running-and-debugging-android-applications.html) to IntelliJ.
+* Build an unsigned APK.  To do this:
+    * Expand ":modules:android"
+    * Expand "Tasks"
+    * Expand "build"
+    * Double-click "build".
+* Run --> "Run 'android'", and follow instructions to create an AVD and launch the APK.
 
 ## Running Tests
 
